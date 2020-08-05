@@ -9,10 +9,12 @@ pipeline {
 
     stage('Nodejs Install App') {
       steps {
-        sh 'npm --version'
+        nodejs(nodeJSInstallationName: 'nodejs') {
+                    sh 'npm --version'
+        }
       }
     }
 
   }
    
-}	
+}
